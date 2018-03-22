@@ -10,7 +10,7 @@ E-Routing je servis za cestovnu navigaciju koji prilikom određivanja optimalne 
 ## Procesi:  
 
 ### Registracija korisnika
-Novi korisnici samostalno kreiraju svoje račune unoseći svoje ime, prezime, username i password. Postojeći korisnici 
+Novi korisnici samostalno kreiraju svoje račune unoseći svoje ime, prezime, e-mail, te kreiraju username i password.
 
 ### Prijava korisnika
 Postojeći korisnik prijavljuje se unoseći svoj username i password.
