@@ -21,8 +21,11 @@ Prijavljeni korisnik unosi početnu i krajnju lokaciju na osnovu čega se određ
 ### Slanje dojave o stanju na putevima
 Korisnik odabere koju vrstu oznake na putu želi da postavi, koliko procjenjuje da je trenutno čekanje i pošalje dojavu. Na osnovu njegove trenutne lokacije ta oznaka se stavlja na kartu i postaje vidljiva ostalim korisnicima kojima se automatski mijenja ruta, na način da se traži sljedeći najkraći cestovni put do krajnje tačke. 
 
-### Uređivanje dojave
+### Uređivanje i ocjenjivanje dojave
 Da bi se izbjeglo lažno dojavljivanje, korisnici mogu postojeću dojavu označiti tačnom ili pogrešnom ukoliko se nalaze u blizini, kao i dodati vlastitu procjenu o vremenu čekanja, ili označiti da je zastoj uklonjen. Dojave sa više 'poena' imat će prioritet prilikom navigacije.
+
+### Brisanje dojave
+Objavu mogu obrisati administrator ili korisnik koji je tu dojavu poslao. Također objava se moze automatski obrisati ako dovoljno ljudi označi zastoj kao uklonjen. Prilikom brisanja ukloni se oznaka sa mape i ažuriraju se rute.
 
 ## Funkcionalnosti:
 ⦁	Registracija korisnika
