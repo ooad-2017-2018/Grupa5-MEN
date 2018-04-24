@@ -109,6 +109,7 @@
   <ItemGroup>
     <Content Include="Assets\karta.gif" />
     <Content Include="Assets\karta2.png" />
+    <Content Include="Assets\mapa2.jpg" />
     <Content Include="Assets\pozadina.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -124,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Administrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginiRegistacija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
