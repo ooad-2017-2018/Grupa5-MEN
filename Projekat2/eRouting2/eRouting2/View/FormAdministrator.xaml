@@ -23,7 +23,9 @@
         <Image HorizontalAlignment="Left" Height="383" Margin="784,92,0,0" VerticalAlignment="Top" Width="674" Source="Assets/mapa2.jpg"/>
         <ToggleSwitch Header="Prikaži samo provjerene dojave" HorizontalAlignment="Left" Margin="830,568,0,0" VerticalAlignment="Top"/>
         <ToggleSwitch Header="Prikaži dojave samo od odabranog korisnika" HorizontalAlignment="Left" Margin="1120,568,0,0" VerticalAlignment="Top"/>
-        <Frame Content="Pregled dojava" HorizontalAlignment="Left" Margin="724,41,0,0" VerticalAlignment="Top" Height="610" Width="766" FontSize="22" FontWeight="Bold"/>
+        <Frame HorizontalAlignment="Left" Margin="724,41,0,0" VerticalAlignment="Top" Height="610" Width="766" FontSize="22" FontWeight="Bold">
+            <Image HorizontalAlignment="Left" Height="100" Margin="568,439,0,0" VerticalAlignment="Top" Width="100"/>
+        </Frame>
 
     </Grid>
 </Page>

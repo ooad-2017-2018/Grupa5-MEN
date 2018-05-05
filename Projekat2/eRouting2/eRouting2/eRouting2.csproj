@@ -94,8 +94,11 @@
   <ItemGroup>
     <Compile Include="DB\DBAdministrator.cs" />
     <Compile Include="DB\DBDojava.cs" />
+    <Compile Include="DB\DBKorisnik.cs" />
+    <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Dojava.cs" />
     <Compile Include="ViewModel\VMDojava.cs" />
+    <Compile Include="ViewModel\VMKorisnik.cs" />
     <Compile Include="View\FormLoginIRegistracija.xaml.cs">
       <DependentUpon>FormLoginIRegistracija.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,7 @@
     <Content Include="Assets\karta2.png" />
     <Content Include="Assets\mapa2.jpg" />
     <Content Include="Assets\pozadina.png" />
+    <Content Include="Assets\profil.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -153,6 +157,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FormMojProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
