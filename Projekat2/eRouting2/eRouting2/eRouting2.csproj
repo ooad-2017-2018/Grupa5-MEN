@@ -93,6 +93,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DB\DBAdministrator.cs" />
+    <Compile Include="DB\DBDojava.cs" />
+    <Compile Include="Model\Dojava.cs" />
+    <Compile Include="ViewModel\VMDojava.cs" />
+    <Compile Include="View\FormLoginIRegistracija.xaml.cs">
+      <DependentUpon>FormLoginIRegistracija.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormAdministrator.xaml.cs">
       <DependentUpon>FormAdministrator.xaml</DependentUpon>
     </Compile>
@@ -132,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\FormLoginIRegistracija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FormAdministrator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
