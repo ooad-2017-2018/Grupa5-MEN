@@ -8,6 +8,7 @@ namespace eRouting2
 {
     public class Korisnik
     {
+        int id;
         string ime;
         string prezime;
         string email;
@@ -17,7 +18,7 @@ namespace eRouting2
         int brojAktivnihDojava;
         Boolean premiumKorisnik;
 
-
+        public int ID { get => id; set => id = value; }
         public string Ime { get => ime; set => ime = value; }
         public string Prezime { get => prezime; set => prezime = value; }
         public string Username { get => username; set => username = value; }
@@ -27,7 +28,7 @@ namespace eRouting2
         public bool PremiumKorisnik { get => premiumKorisnik; set => premiumKorisnik = value; }
         public string Email { get => email; set => email = value; }
 
-        public Korisnik(string ime, string prezime, string email, string username, string password, int brojDojava, int brojAktivnihDojava)
+        public Korisnik(int id, string ime, string prezime, string username, string password, string email, int brojDojava, int brojAktivnihDojava)
         {
             Ime = ime;
             Prezime = prezime;

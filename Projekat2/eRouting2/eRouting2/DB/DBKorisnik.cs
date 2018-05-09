@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace eRouting2.DB
+namespace eRouting2
 {
     class DBKorisnik
     {
@@ -32,7 +32,7 @@ namespace eRouting2.DB
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
-                            Korisnik k = new Korisnik(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6));
+                            Korisnik k = new Korisnik(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7));
                             Korisnici.Add(k);
                         }
                     }

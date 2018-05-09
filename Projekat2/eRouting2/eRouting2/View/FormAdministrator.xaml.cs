@@ -12,26 +12,51 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Notifications;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace eRouting2
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class FormAdministrator : Page
     {
-        //List<Korisnik> Korisnici;
+        List<Korisnik> Korisnici;
+        VMAdministrator ViewModel;
         public FormAdministrator()
         {
             this.InitializeComponent();
-
+            ViewModel = new VMAdministrator();
+            Korisnici = ViewModel.UčitavanjeKorisnika();
+            for(int i=0;i<Korisnici.Count();i++)
+            ListBoxKorisnici.Items.Add(Korisnici[i].Username);
+            if(ListBoxKorisnici.Items.Count>0) ListBoxKorisnici.SelectedIndex = 0;
         }
 
         private void ButtonObrisi_Click(object sender, RoutedEventArgs e)
         {
+            if (ListBoxKorisnici.Items.Count == 0)
+            {
+                TextBlockGreska.Text = "Nije odabran korisnik!";
+                return;
+            }
+            TextBlockGreska.Text = "";
+            String username = Convert.ToString(ListBoxKorisnici.SelectedItem);
+            ViewModel.ObrisiKorisnika(username);
+            TextBlockGreska.Text = "Korisnik obrisan!";
+        }
 
+        private void ButtonStatistika_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListBoxKorisnici.Items.Count == 0)
+            {
+                TextBlockGreska.Text = "Nije odabran korisnik!";
+                return;
+            }
+            TextBlockGreska.Text = "";
+            String username = Convert.ToString(ListBoxKorisnici.SelectedItem);
+            Korisnik k = Korisnici.FirstOrDefault(x => x.Username == username);
+            TextBoxStatistika.Visibility=Visibility.Visible;
+            TextBoxStatistika.Text = "Ime i prezime: " + k.Ime + " " + k.Prezime + "\nUkupan broj dojava: " + k.BrojDojava + "\nBroj aktivnih dojava: " + k.BrojAktivnihDojava;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace eRouting2
         private String s;
         public DBConnectionString()
         {
-            s = "Server=tcp:ooad-men.database.windows.net,1433;Initial Catalog=OOADBaza;Persist Security Info=False;User ID=user;Password=ooad;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            s = "Server=tcp:ooad-men.database.windows.net,1433;Initial Catalog=OOADBaza;Persist Security Info=False;User ID=mdelibasic1;Password=211297Sead;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
         public String GetString() { return s; }
     }

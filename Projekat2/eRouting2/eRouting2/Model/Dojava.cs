@@ -25,7 +25,7 @@ namespace eRouting2
         public int Id { get => id; set => id = value; }
         public string Lokacija { get => lokacija; set => lokacija = value; }
 
-        public Dojava(int id, vrstaDojave vrsta, List<int> ocjene, DateTime procjenaCekanja, string lokacija)
+        public Dojava(int id, vrstaDojave vrsta, DateTime procjenaCekanja, string lokacija)
         {
             Id = id;
             Vrsta = vrsta;

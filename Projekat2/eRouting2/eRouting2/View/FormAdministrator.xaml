@@ -7,25 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Assets/pozadina.png" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <ListBox x:Name="ListBoxKorisnici" HorizontalAlignment="Left" Height="559" Margin="59,92,0,0" VerticalAlignment="Top" Width="597" FontSize="20">
-            <ListBoxItem Content="Korisnik 1" FontSize="20"/>
-            <ListBoxItem Content="Korisnik 2" FontSize="20"/>
-            <ListBoxItem Content="Korisnik 3"/>
-        </ListBox>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Visibility="Visible">
+        <Image Source="/assets/pozadina.png" Stretch="UniformToFill"/>
+        <ListBox x:Name="ListBoxKorisnici" HorizontalAlignment="Left" Height="559" Margin="59,92,0,0" VerticalAlignment="Top" Width="597" FontSize="30"/>
         <Button x:Name="ButtonObrisi" Content="Obriši korisnika" HorizontalAlignment="Left" Margin="133,725,0,0" VerticalAlignment="Top" Click="ButtonObrisi_Click"/>
         <Button x:Name="ButtonAzuriraj" Content="Ažuriraj korisnika" HorizontalAlignment="Left" Margin="292,725,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonStatistika" Content="Prikaži statistiku" HorizontalAlignment="Left" Margin="454,725,0,0" VerticalAlignment="Top"/>
-        <Frame Content="Pregled korisnika" HorizontalAlignment="Left" Margin="32,41,0,0" VerticalAlignment="Top" Height="744" Width="659" FontSize="22" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="383" Margin="784,92,0,0" VerticalAlignment="Top" Width="674" Source="Assets/mapa2.jpg"/>
-        <ToggleSwitch Header="Prikaži samo provjerene dojave" HorizontalAlignment="Left" Margin="830,568,0,0" VerticalAlignment="Top"/>
-        <ToggleSwitch Header="Prikaži dojave samo od odabranog korisnika" HorizontalAlignment="Left" Margin="1120,568,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonStatistika" Content="Prikaži statistiku" HorizontalAlignment="Left" Margin="454,725,0,0" VerticalAlignment="Top" Click="ButtonStatistika_Click"/>
+        <Frame HorizontalAlignment="Left" Margin="32,41,0,0" VerticalAlignment="Top" Height="744" Width="659" FontSize="22" FontWeight="Bold">
+            <TextBlock x:Name="TextBlockGreska" HorizontalAlignment="Left" Margin="33,623,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="591" FontFamily="Segoe UI" Foreground="Red"/>
+        </Frame>
+        <Image HorizontalAlignment="Left" Height="383" Margin="784,92,0,0" VerticalAlignment="Top" Width="674" Source="/Assets/mapa2.jpg"/>
+        <ToggleSwitch Header="Prikaži samo provjerene dojave" HorizontalAlignment="Left" Margin="828,502,0,0" VerticalAlignment="Top"/>
+        <ToggleSwitch Header="Prikaži dojave samo od odabranog korisnika" HorizontalAlignment="Left" Margin="1084,502,0,0" VerticalAlignment="Top"/>
         <Frame HorizontalAlignment="Left" Margin="724,41,0,0" VerticalAlignment="Top" Height="610" Width="766" FontSize="22" FontWeight="Bold">
             <Image HorizontalAlignment="Left" Height="100" Margin="568,439,0,0" VerticalAlignment="Top" Width="100"/>
         </Frame>
+        <TextBox x:Name="TextBoxStatistika" HorizontalAlignment="Left" Margin="804,593,0,0" Text="" VerticalAlignment="Top" Height="165" Width="654" Visibility="Collapsed" IsReadOnly="True" AcceptsReturn="True"/>
 
     </Grid>
 </Page>
