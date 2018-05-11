@@ -12,7 +12,9 @@ namespace eRouting2
         public void ObrisiKorisnika(String username)
         {
             DBKorisnik DB = new DBKorisnik();
-            List<Korisnik> temp = this.UčitavanjeKorisnika();
+            VMKorisnik v;
+            v = new VMKorisnik();
+            List<Korisnik> temp = v.UčitavanjeKorisnika();
             Korisnik k = temp.FirstOrDefault(x => x.Username == username);
             if (k != null) DB.ObrisiKorisnika(k);
         }
@@ -20,11 +22,12 @@ namespace eRouting2
         {
 
         }
-        public List<Korisnik> UčitavanjeKorisnika()
+      
+        public List<Administrator> UcitavanjeAdministratora()
         {
-            DBKorisnik DB = new DBKorisnik();
-            DB.UcitajKorisnike();
-            return DB.Korisnici;
+            DBAdministrator DB = new DBAdministrator();
+            DB.ucitajAdministratore();
+            return DB.Administratori;
         }
     }
 }

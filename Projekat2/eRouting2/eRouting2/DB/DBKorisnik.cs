@@ -32,7 +32,7 @@ namespace eRouting2
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
-                            Korisnik k = new Korisnik(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7));
+                            Korisnik k = new Korisnik(reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7));
                             Korisnici.Add(k);
                         }
                     }

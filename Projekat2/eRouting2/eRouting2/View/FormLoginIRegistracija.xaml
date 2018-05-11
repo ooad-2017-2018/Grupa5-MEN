@@ -17,19 +17,21 @@
         <TextBlock HorizontalAlignment="Left" Margin="583,99,0,0" Text="Ime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="67" Height="34"/>
         <TextBlock HorizontalAlignment="Left" Margin="577,243,0,0" Text="Kreiraj username:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="264" Height="35"/>
         <TextBlock HorizontalAlignment="Left" Margin="577,297,0,0" Text="Kreiraj password:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="263" Height="33"/>
-        <TextBox HorizontalAlignment="Left" Margin="851,103,0,0" Text="" VerticalAlignment="Top" Width="307" Height="34"/>
-        <TextBox HorizontalAlignment="Left" Margin="856,249,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.234" Width="307" Height="34"/>
-        <TextBox HorizontalAlignment="Left" Margin="853,197,0,0" Text="" VerticalAlignment="Top" Width="309" Height="34"/>
-        <TextBox HorizontalAlignment="Left" Margin="853,148,0,0" Text="" VerticalAlignment="Top" Width="305" Height="34"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="854,303,0,0" VerticalAlignment="Top" Width="308" Height="34"/>
-        <TextBox HorizontalAlignment="Left" Margin="175,102,0,0" Text="" VerticalAlignment="Top" Width="277"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="173,159,0,0" VerticalAlignment="Top" Width="281"/>
+        <TextBox x:Name="textIme" HorizontalAlignment="Left" Margin="851,103,0,0" Text="" VerticalAlignment="Top" Width="307" Height="34"/>
+        <TextBox x:Name="textUser" HorizontalAlignment="Left" Margin="856,249,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.234" Width="307" Height="34"/>
+        <TextBox x:Name="textEmail" HorizontalAlignment="Left" Margin="853,197,0,0" Text="" VerticalAlignment="Top" Width="309" Height="34"/>
+        <TextBox x:Name="textPrezime" HorizontalAlignment="Left" Margin="853,148,0,0" Text="" VerticalAlignment="Top" Width="305" Height="34"/>
+        <PasswordBox x:Name="textPass1" HorizontalAlignment="Left" Margin="854,303,0,0" VerticalAlignment="Top" Width="308" Height="34"/>
+        <TextBox x:Name="textUsername" HorizontalAlignment="Left" Margin="175,102,0,0" Text="" VerticalAlignment="Top" Width="277"/>
+        <PasswordBox x:Name="textPass" HorizontalAlignment="Left" Margin="173,159,0,0" VerticalAlignment="Top" Width="281"/>
         <Button x:Name="ButtonPrijaviSe" Content="Prijavi se " HorizontalAlignment="Left" Margin="173,230,0,0" VerticalAlignment="Top" Width="124" Background="#FF295ED9" Foreground="#FFFFFEFD" Click="ButtonPrijaviSe_Click"/>
         <Button x:Name="buttonRegistrujSe" Content="RegistrujSe " HorizontalAlignment="Left" Margin="917,599,0,0" VerticalAlignment="Top" Width="217" Background="#FF295ED9" Foreground="#FFFFFEFD" Click="buttonRegistrujSe_Click"/>
         <CheckBox Content="Ostani prijavljen" HorizontalAlignment="Left" Margin="316,230,0,0" VerticalAlignment="Top"/>
         <Button x:Name="buttonDodajFotografiju" Content="Dodaj fotografiju" HorizontalAlignment="Left" Margin="940,526,0,0" VerticalAlignment="Top" Width="169" Height="50"/>
         <Image Source="/assets/ikona.png" HorizontalAlignment="Left" Height="138" Margin="952,364,0,0" VerticalAlignment="Top" Width="126"/>
         <Image Source="/assets/pozadina.png" HorizontalAlignment="Left" Height="437" Margin="21,357,0,0" VerticalAlignment="Top" Width="660"/>
+        <FlipView HorizontalAlignment="Left" Margin="626,114,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="textGreska" HorizontalAlignment="Left" Margin="44,204,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.226,-0.4"/>
 
     </Grid>
 </Page>

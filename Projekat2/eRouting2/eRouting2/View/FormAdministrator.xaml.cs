@@ -26,7 +26,8 @@ namespace eRouting2
         {
             this.InitializeComponent();
             ViewModel = new VMAdministrator();
-            Korisnici = ViewModel.UčitavanjeKorisnika();
+            VMKorisnik vMKorisnik = new VMKorisnik();
+            Korisnici = vMKorisnik.UčitavanjeKorisnika();
             for(int i=0;i<Korisnici.Count();i++)
             ListBoxKorisnici.Items.Add(Korisnici[i].Username);
             if(ListBoxKorisnici.Items.Count>0) ListBoxKorisnici.SelectedIndex = 0;

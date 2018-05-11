@@ -99,6 +99,9 @@
     <Compile Include="Model\Dojava.cs" />
     <Compile Include="ViewModel\VMDojava.cs" />
     <Compile Include="ViewModel\VMKorisnik.cs" />
+    <Compile Include="View\FormaMojProfil.xaml.cs">
+      <DependentUpon>FormaMojProfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLoginIRegistracija.xaml.cs">
       <DependentUpon>FormLoginIRegistracija.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\FormaMojProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FormLoginIRegistracija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,10 +164,6 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\FormMojProfil.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
