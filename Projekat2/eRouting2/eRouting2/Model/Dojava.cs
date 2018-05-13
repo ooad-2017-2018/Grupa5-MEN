@@ -14,18 +14,18 @@ namespace eRouting2
     {
         //private korisnik 
         private int id;
-        private vrstaDojave vrsta;
+        private string vrsta;
         private List<int> ocjene;
         private DateTime procjenaCekanja;
         private string lokacija;
 
         public List<int> Ocjene { get => ocjene; set => ocjene = value; }
         public DateTime ProcjenaCekanja { get => procjenaCekanja; set => procjenaCekanja = value; }
-        internal vrstaDojave Vrsta { get => vrsta; set => vrsta = value; }
+        public string  Vrsta { get => vrsta; set => vrsta = value; }
         public int Id { get => id; set => id = value; }
         public string Lokacija { get => lokacija; set => lokacija = value; }
 
-        public Dojava(int id, vrstaDojave vrsta, DateTime procjenaCekanja, string lokacija)
+        public Dojava(int id, string vrsta, DateTime procjenaCekanja, string lokacija)
         {
             Id = id;
             Vrsta = vrsta;

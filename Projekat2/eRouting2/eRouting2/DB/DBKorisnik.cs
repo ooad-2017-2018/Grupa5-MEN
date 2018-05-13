@@ -32,7 +32,7 @@ namespace eRouting2
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
-                            Korisnik k = new Korisnik(reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7));
+                            Korisnik k = new Korisnik(reader.GetInt32(0) ,reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7));
                             Korisnici.Add(k);
                         }
                     }
@@ -75,12 +75,19 @@ namespace eRouting2
         {
             try
             {
-                string query = "INSERT INTO Korisnik VALUES (:Ime, :Prezime, :Email, :Username, :Password;)";
+                String query = "insert into Korisnik " +
+                "values (:ID,:Ime,:Prezime,:Username,:Password,:Email, :BrojDojava, :BrojAktivnihDojava)";
+                //string query = "INSERT INTO Korisnik VALUES (:ID, :Ime, :Prezime, :Username, :Password, :Email, :BrojDojava, :BrojAktivnihDojava)";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = query;
+
+                    SqlParameter ID = new SqlParameter();
+                    ID.Value = k.ID;
+                    ID.ParameterName = "ID";
+                    cmd.Parameters.Add(ID);
 
                     SqlParameter Ime = new SqlParameter();
                     Ime.Value = k.Ime;
@@ -92,11 +99,6 @@ namespace eRouting2
                     Prezime.ParameterName = "Prezime";
                     cmd.Parameters.Add(Prezime);
 
-                    SqlParameter Email = new SqlParameter();
-                    Email.Value = k.Email;
-                    Email.ParameterName = "Email";
-                    cmd.Parameters.Add(Email);
-
                     SqlParameter Username = new SqlParameter();
                     Username.Value = k.Username;
                     Username.ParameterName = "Username";
@@ -107,8 +109,25 @@ namespace eRouting2
                     Password.ParameterName = "Password";
                     cmd.Parameters.Add(Password);
 
+                    SqlParameter Email = new SqlParameter();
+                    Email.Value = k.Email;
+                    Email.ParameterName = "Email";
+                    cmd.Parameters.Add(Email);
+
+                    SqlParameter BrojDojava = new SqlParameter();
+                    BrojDojava.Value = k.BrojDojava;
+                    BrojDojava.ParameterName = "BrojDojava";
+                    cmd.Parameters.Add(BrojDojava);
+
+                    SqlParameter BrojAktivnihDojava = new SqlParameter();
+                    BrojAktivnihDojava.Value = k.BrojAktivnihDojava;
+                    BrojAktivnihDojava.ParameterName = "BrojAktivnihDojava";
+                    cmd.Parameters.Add(BrojAktivnihDojava);
+
+                    con.Open();
                     int r = cmd.ExecuteNonQuery();
                     cmd.Dispose();
+                    con.Close();
                     return r;
 
                 }

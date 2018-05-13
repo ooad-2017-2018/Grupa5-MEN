@@ -29,7 +29,7 @@ namespace eRouting2
         public bool PremiumKorisnik { get => premiumKorisnik; set => premiumKorisnik = value; }
         public string Email { get => email; set => email = value; }
 
-        public Korisnik(string ime, string prezime, string username, string password, string email, int brojDojava, int brojAktivnihDojava)
+        public Korisnik(int id, string ime, string prezime, string username, string password, string email, int brojDojava, int brojAktivnihDojava)
         {
             globalID++;
             id = globalID;

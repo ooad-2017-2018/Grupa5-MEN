@@ -75,7 +75,7 @@ namespace eRouting2
             email=textEmail.Text;
             username = textUser.Text;
             pass = textPass1.Password;
-            Korisnik k = new Korisnik(ime, prezime, username, pass, email, 0, 0);
+            Korisnik k = new Korisnik(0, ime, prezime, username, pass, email, 0, 0);
             ViewModel2.DodajKorisnika(k);
             Korisnici.Add(k);
             MessageDialog msgbox = new MessageDialog("Uspješno ste se registrovali. Prijavite se ako želite nastaviti.");

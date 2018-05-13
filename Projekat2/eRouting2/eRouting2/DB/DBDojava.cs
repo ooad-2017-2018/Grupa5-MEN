@@ -15,7 +15,7 @@ namespace eRouting2
         {
             Dojave = new List<Dojava>();
         }
-        public void ucitajAdministratore()
+        public void ucitajDojave()
         {
             try
             {
@@ -32,8 +32,8 @@ namespace eRouting2
                         SqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                           // Dojava a = new Dojava(reader.GetInt32(0), vrsta, List<>, reader.GetDateTime(3), reader.GetString(4));
-                            //Dojave.Add(a);
+                           Dojava a = new Dojava(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetString(3));
+                            Dojave.Add(a);
                         }
                     }
                     con.Close();
