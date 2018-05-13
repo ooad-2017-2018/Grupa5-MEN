@@ -48,7 +48,7 @@ namespace eRouting2
         {
             try
             {
-                String query = "DELETE FROM Administrator WHERE id = :id;";
+                String query = "DELETE FROM Administrator WHERE id = @id;";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {
@@ -77,7 +77,7 @@ namespace eRouting2
             try
             {
                 String query = "insert into Administrator " +
-                    "values (:id,:Ime,:Prezime,:Username,:Password)";
+                    "values (@id,@Ime,@Prezime,@Username,@Password)";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {

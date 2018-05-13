@@ -35,7 +35,7 @@ namespace eRouting2
 
         private void ButtonObrisi_Click(object sender, RoutedEventArgs e)
         {
-            if (ListBoxKorisnici.Items.Count == 0)
+            if (ListBoxKorisnici.Items.Count == 0 || ListBoxKorisnici.SelectedItem==null)
             {
                 TextBlockGreska.Text = "Nije odabran korisnik!";
                 return;
@@ -43,12 +43,13 @@ namespace eRouting2
             TextBlockGreska.Text = "";
             String username = Convert.ToString(ListBoxKorisnici.SelectedItem);
             ViewModel.ObrisiKorisnika(username);
+            ListBoxKorisnici.Items.Remove(username);
             TextBlockGreska.Text = "Korisnik obrisan!";
         }
 
         private void ButtonStatistika_Click(object sender, RoutedEventArgs e)
         {
-            if (ListBoxKorisnici.Items.Count == 0)
+            if (ListBoxKorisnici.Items.Count == 0 || ListBoxKorisnici.SelectedItem == null)
             {
                 TextBlockGreska.Text = "Nije odabran korisnik!";
                 return;
@@ -58,6 +59,20 @@ namespace eRouting2
             Korisnik k = Korisnici.FirstOrDefault(x => x.Username == username);
             TextBoxStatistika.Visibility=Visibility.Visible;
             TextBoxStatistika.Text = "Ime i prezime: " + k.Ime + " " + k.Prezime + "\nUkupan broj dojava: " + k.BrojDojava + "\nBroj aktivnih dojava: " + k.BrojAktivnihDojava;
+        }
+
+        private void ButtonAzuriraj_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListBoxKorisnici.Items.Count == 0 || ListBoxKorisnici.SelectedItem == null)
+            {
+                TextBlockGreska.Text = "Nije odabran korisnik!";
+                return;
+            }
+            TextBlockGreska.Text = "";
+            String username = Convert.ToString(ListBoxKorisnici.SelectedItem);
+            Korisnik k = Korisnici.FirstOrDefault(x => x.Username == username);
+            FormaMojProfil fm = new FormaMojProfil(/*k*/); //NAIDA ovdje obrisi komentar kad promijenis konstruktor forme :D
+            Window.Current.Content = fm;
         }
     }
 }

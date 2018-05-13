@@ -16,7 +16,8 @@ namespace eRouting2
             v = new VMKorisnik();
             List<Korisnik> temp = v.UčitavanjeKorisnika();
             Korisnik k = temp.FirstOrDefault(x => x.Username == username);
-            if (k != null) DB.ObrisiKorisnika(k);
+            if (k != null)
+                DB.ObrisiKorisnika(k);
         }
         public void PrikaziStatistiku(String username)
         {

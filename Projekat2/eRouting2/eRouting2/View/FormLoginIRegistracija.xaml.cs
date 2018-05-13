@@ -57,7 +57,7 @@ namespace eRouting2
             }
             else
             {
-                textGreska.Text= textGreska + "Pogrešni pristupni podaci. Pokušajte ponovo.";
+                textGreska.Text= "Pogrešni pristupni podaci. Pokušajte ponovo.";
                 textPass.Password = String.Empty;
                 textUsername.Text = String.Empty;
             }

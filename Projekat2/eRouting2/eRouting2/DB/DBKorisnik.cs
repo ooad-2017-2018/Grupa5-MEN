@@ -50,7 +50,7 @@ namespace eRouting2
         {
             try
             {
-                string query = "DELETE FROM Korisnik WHERE username = :username;";
+                string query = "DELETE FROM Korisnik WHERE username = @username;";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {
@@ -76,8 +76,7 @@ namespace eRouting2
             try
             {
                 String query = "insert into Korisnik " +
-                "values (:ID,:Ime,:Prezime,:Username,:Password,:Email, :BrojDojava, :BrojAktivnihDojava)";
-                //string query = "INSERT INTO Korisnik VALUES (:ID, :Ime, :Prezime, :Username, :Password, :Email, :BrojDojava, :BrojAktivnihDojava)";
+                "values (@ID,@Ime,@Prezime,@Username,@Password,@Email, @BrojDojava, @BrojAktivnihDojava)";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {
