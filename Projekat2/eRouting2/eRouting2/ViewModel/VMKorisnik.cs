@@ -26,17 +26,20 @@ namespace eRouting2
         {
 
         }
-        public void UcitavanjeDojava(Korisnik k)
+        public List<Dojava> UcitavanjeDojava(Korisnik k)
         {
             DBDojava DB = new DBDojava();
             DB.ucitajDojave();
             List<Dojava> dojave = DB.Dojave;
             List<Dojava> dk = new List<Dojava>();
-            for ( int i= 0; i<dojave.Count; i++)
+            for (int i = 0; i < dojave.Count; i++)
             {
-                //
+                if(dojave[i].KorisnikID== k.ID)
+                {
+                    dk.Add(dojave[i]);
+                }
             }
-
+            return dk;
         }
         public List<Korisnik> UčitavanjeKorisnika()
         {

@@ -32,7 +32,7 @@ namespace eRouting2
                         SqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                           Dojava a = new Dojava(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetString(3));
+                           Dojava a = new Dojava(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetString(3), reader.GetInt32(4));
                             Dojave.Add(a);
                         }
                     }
@@ -77,7 +77,7 @@ namespace eRouting2
             try
             {
                 String query = "insert into Dojava " +
-                    "values (:Id,:,:Vrsta,:Ocjene,:ProcjenaCekanja,:Lokacija)";
+                    "values (:Id,:,:Vrsta,:Ocjene,:ProcjenaCekanja,:Lokacija, :KorisnikID)";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {
@@ -104,11 +104,17 @@ namespace eRouting2
                     lokacija.Value = d.Lokacija;
                     lokacija.ParameterName = "lokacija";
 
+                    SqlParameter korisnikID = new SqlParameter();
+                    korisnikID.Value = d.KorisnikID;
+                    korisnikID.ParameterName = "korisnikID";
+
+
                     cmd.Parameters.Add(id);
                     cmd.Parameters.Add(vrsta);
                     cmd.Parameters.Add(ocjene);
                     cmd.Parameters.Add(procjenaCekanja);
                     cmd.Parameters.Add(lokacija);
+                    cmd.Parameters.Add(korisnikID);
 
                     int k = cmd.ExecuteNonQuery();
                     cmd.Dispose();

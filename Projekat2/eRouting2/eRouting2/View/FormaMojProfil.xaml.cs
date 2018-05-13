@@ -16,6 +16,7 @@ using Windows.Storage.Pickers;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,12 +27,12 @@ namespace eRouting2
     /// </summary>
     public sealed partial class FormaMojProfil : Page
     {
-        Korisnik korisnik =new Korisnik (556, "nsd", "hhj", "khkl", "gjffgf", "bjh", 10, 2);
-       
+        Korisnik korisnik;
+        List<Dojava> dojave;
         VMKorisnik ViewModel;
-        public FormaMojProfil(/*Korisnik k*/)
+        public FormaMojProfil(Korisnik k)
         {
-            /*korisnik = k;*/
+            korisnik = k;
             this.InitializeComponent();
             TextBoxIme.Text = korisnik.Ime;
             TextBoxPrezime.Text = korisnik.Prezime;
@@ -39,6 +40,11 @@ namespace eRouting2
             TextBoxUsername.Text = korisnik.Username;
             slikaProfila.Source = korisnik.Slika;
             ViewModel = new VMKorisnik();
+            dojave = ViewModel.UcitavanjeDojava(korisnik);
+            for( int i=0; i<dojave.Count; i++)
+            {
+                ListBoxDojave.Items.Add(dojave[i].Vrsta + " " + dojave[i].Lokacija);
+            }
 
 
         }
@@ -65,8 +71,10 @@ namespace eRouting2
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            
             korisnik.UrediInformacije(TextBoxIme.Text, TextBoxPrezime.Text, TextBoxEmail.Text, TextBoxUsername.Text);
-
+            MessageDialog msgbox = new MessageDialog("Uspješno ste uredili podatke");
+            msgbox.ShowAsync();
 
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)

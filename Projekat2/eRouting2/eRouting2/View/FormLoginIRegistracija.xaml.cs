@@ -52,7 +52,7 @@ namespace eRouting2
             }
             else if (!(traziK is null))
             {
-                FormaMojProfil Fm = new FormaMojProfil();
+                FormaMojProfil Fm = new FormaMojProfil(traziK);
                 Window.Current.Content = Fm;
             }
             else

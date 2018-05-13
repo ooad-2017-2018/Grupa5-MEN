@@ -71,7 +71,7 @@ namespace eRouting2
             TextBlockGreska.Text = "";
             String username = Convert.ToString(ListBoxKorisnici.SelectedItem);
             Korisnik k = Korisnici.FirstOrDefault(x => x.Username == username);
-            FormaMojProfil fm = new FormaMojProfil(/*k*/); //NAIDA ovdje obrisi komentar kad promijenis konstruktor forme :D
+            FormaMojProfil fm = new FormaMojProfil(k); 
             Window.Current.Content = fm;
         }
     }

@@ -29,7 +29,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="35,400,0,0" Text="Aktivne dojave: " TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
         <TextBox x:Name="TextBoxIme" HorizontalAlignment="Left" Margin="206,99,0,0" Text="" VerticalAlignment="Top" Width="227" Grid.Column="1"/>
         <TextBox x:Name="TextBoxPrezime" HorizontalAlignment="Left" Margin="206,156,0,0" Text="" VerticalAlignment="Top" Width="227" Grid.Column="1"/>
-        <ListBox HorizontalAlignment="Left" Height="355" Margin="205,406,0,0" VerticalAlignment="Top" Width="360" Grid.Column="1"/>
+        <ListBox x:Name="ListBoxDojave" HorizontalAlignment="Left" Height="355" Margin="205,406,0,0" VerticalAlignment="Top" Width="360" Grid.Column="1"/>
         <Button Content="Uredi informacije" HorizontalAlignment="Left" Margin="311,23,0,0" VerticalAlignment="Top" FontSize="20" Click="Button_Click_3" RenderTransformOrigin="0.5,0.5" Grid.Column="1" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.Row="1">
             <Button.RenderTransform>
                 <CompositeTransform SkewX="0.398" TranslateX="4.416"/>
