@@ -12,6 +12,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage.Pickers;
+using Windows.Storage;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +26,52 @@ namespace eRouting2
     /// </summary>
     public sealed partial class FormaMojProfil : Page
     {
-        public FormaMojProfil()
+        Korisnik korisnik =new Korisnik (556, "nsd", "hhj", "khkl", "gjffgf", "bjh", 10, 2);
+       
+        VMKorisnik ViewModel;
+        public FormaMojProfil(/*Korisnik k*/)
         {
+            /*korisnik = k;*/
             this.InitializeComponent();
+            TextBoxIme.Text = korisnik.Ime;
+            TextBoxPrezime.Text = korisnik.Prezime;
+            TextBoxEmail.Text = korisnik.Email;
+            TextBoxUsername.Text = korisnik.Username;
+            slikaProfila.Source = korisnik.Slika;
+            ViewModel = new VMKorisnik();
+
+
+        }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            FileOpenPicker izbornikFajlaSlike = new FileOpenPicker();
+            izbornikFajlaSlike.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            izbornikFajlaSlike.FileTypeFilter.Add(".bmp");
+            izbornikFajlaSlike.FileTypeFilter.Add(".jpeg");
+            izbornikFajlaSlike.FileTypeFilter.Add(".jpg");
+            izbornikFajlaSlike.FileTypeFilter.Add(".png");
+            StorageFile fajlSlike = await izbornikFajlaSlike.PickSingleFileAsync();
+            if (fajlSlike != null)
+            {
+                using (IRandomAccessStream tokFajla = await fajlSlike.OpenAsync(FileAccessMode.Read))
+                {
+                    BitmapImage slika = new BitmapImage();
+                    slika.SetSource(tokFajla);
+                    slikaProfila.Source = slika;
+                    korisnik.DodajSliku(slika);
+                }
+            }
+        }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            korisnik.UrediInformacije(TextBoxIme.Text, TextBoxPrezime.Text, TextBoxEmail.Text, TextBoxUsername.Text);
+
+
+        }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

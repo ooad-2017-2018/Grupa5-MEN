@@ -26,6 +26,18 @@ namespace eRouting2
         {
 
         }
+        public void UcitavanjeDojava(Korisnik k)
+        {
+            DBDojava DB = new DBDojava();
+            DB.ucitajDojave();
+            List<Dojava> dojave = DB.Dojave;
+            List<Dojava> dk = new List<Dojava>();
+            for ( int i= 0; i<dojave.Count; i++)
+            {
+                //
+            }
+
+        }
         public List<Korisnik> UčitavanjeKorisnika()
         {
             DBKorisnik DB = new DBKorisnik();

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace eRouting2
 {
     public class Korisnik
     {
-        static int globalID;
         int id;
         string ime;
         string prezime;
@@ -17,6 +18,7 @@ namespace eRouting2
         string password;
         int brojDojava;
         int brojAktivnihDojava;
+        ImageSource slika;
         Boolean premiumKorisnik;
 
         public int ID { get => id; set => id = value; }
@@ -28,11 +30,10 @@ namespace eRouting2
         public int BrojAktivnihDojava { get => brojAktivnihDojava; set => brojAktivnihDojava = value; }
         public bool PremiumKorisnik { get => premiumKorisnik; set => premiumKorisnik = value; }
         public string Email { get => email; set => email = value; }
+        public ImageSource Slika { get => slika; set => slika = value; }
 
         public Korisnik(int id, string ime, string prezime, string username, string password, string email, int brojDojava, int brojAktivnihDojava)
         {
-            globalID++;
-            id = globalID;
             Ime = ime;
             Prezime = prezime;
             Email = email;
@@ -41,7 +42,18 @@ namespace eRouting2
             BrojDojava = brojDojava;
             BrojAktivnihDojava = brojAktivnihDojava;
             PremiumKorisnik = false;
+            Slika = new BitmapImage(new Uri("ms-appx:///Assets/profil.jpg"));
         }
-
+        public void UrediInformacije(string ime, string prezime, string email, string username)
+        {
+            Ime = ime;
+            Prezime = prezime;
+            Email = email;
+            Username = username;
+        }
+        public void DodajSliku(ImageSource s)
+        {
+            Slika = s;
+        }
     }
 }
