@@ -10,7 +10,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="193*"/>
-            <RowDefinition Height="57*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="37*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="157*"/>
@@ -26,11 +27,11 @@
         <TextBlock HorizontalAlignment="Left" Margin="35,99,0,0" Text="Ime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="35,156,0,0" Text="Prezime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.704,0.556" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="33,221,0,0" Text="E-mail adresa: " TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="35,400,0,0" Text="Aktivne dojave: " TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
+        <TextBlock x:Name="TextError" HorizontalAlignment="Left" Margin="202,2,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.226,-0.4"  FontWeight="Bold" FontSize="20" Grid.Column="1" Grid.Row="2"/>
         <TextBox x:Name="TextBoxIme" HorizontalAlignment="Left" Margin="206,99,0,0" Text="" VerticalAlignment="Top" Width="227" Grid.Column="1"/>
         <TextBox x:Name="TextBoxPrezime" HorizontalAlignment="Left" Margin="206,156,0,0" Text="" VerticalAlignment="Top" Width="227" Grid.Column="1"/>
         <ListBox x:Name="ListBoxDojave" HorizontalAlignment="Left" Height="355" Margin="205,406,0,0" VerticalAlignment="Top" Width="360" Grid.Column="1"/>
-        <Button Content="Uredi informacije" HorizontalAlignment="Left" Margin="311,23,0,0" VerticalAlignment="Top" FontSize="20" Click="Button_Click_3" RenderTransformOrigin="0.5,0.5" Grid.Column="1" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.Row="1">
+        <Button Content="Uredi informacije" HorizontalAlignment="Left" Margin="338,23,0,0" VerticalAlignment="Top" FontSize="20" Click="Button_Click_3" RenderTransformOrigin="0.5,0.5" Grid.Column="1" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.Row="1">
             <Button.RenderTransform>
                 <CompositeTransform SkewX="0.398" TranslateX="4.416"/>
             </Button.RenderTransform>
@@ -38,6 +39,7 @@
         <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Margin="206,213,0,0" Text="" VerticalAlignment="Top" Width="227" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="30,277,0,0" Text="Username: " TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
         <TextBox x:Name="TextBoxUsername" HorizontalAlignment="Left" Margin="207,269,0,0" Text="" VerticalAlignment="Top" Width="227" Grid.Column="1"/>
+        <Button Content="Odjavi se" HorizontalAlignment="Left" Margin="192,22,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" FontSize="20" Click="Button_Click"/>
 
     </Grid>
 </Page>

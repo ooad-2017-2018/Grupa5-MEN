@@ -71,15 +71,34 @@ namespace eRouting2
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            
-            korisnik.UrediInformacije(TextBoxIme.Text, TextBoxPrezime.Text, TextBoxEmail.Text, TextBoxUsername.Text);
-            MessageDialog msgbox = new MessageDialog("Uspješno ste uredili podatke");
-            msgbox.ShowAsync();
+            if (TextBoxIme.Text == string.Empty || TextBoxPrezime.Text == string.Empty || TextBoxEmail.Text == string.Empty || TextBoxUsername.Text == string.Empty)
+            {
+                TextError.Text = "Polja ne smiju biti prazna";
+                return;
+            }
+            else if (ViewModel.DaLiJeDostupanUsername(TextBoxUsername.Text) == false && korisnik.Username!=TextBoxUsername.Text)
+            {
+                TextError.Text = "Ovaj username vec postoji, izaberite neki drugi username";
+                return;
+            }
+            else {
+                korisnik.UrediInformacije(TextBoxIme.Text, TextBoxPrezime.Text, TextBoxEmail.Text, TextBoxUsername.Text);
+                ViewModel.UredjivanjeKorisnika(korisnik);
+                TextError.Text = "";
+                MessageDialog msgbox = new MessageDialog("Uspješno ste uredili podatke");
+                msgbox.ShowAsync();
+            }
 
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FormLoginIRegistracija Fr = new FormLoginIRegistracija();
+            Window.Current.Content = Fr;
         }
     }
 }

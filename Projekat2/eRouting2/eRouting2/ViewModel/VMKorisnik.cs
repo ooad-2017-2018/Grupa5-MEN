@@ -10,22 +10,6 @@ namespace eRouting2
     {
         public Korisnik korisnik { get; set; }
 
-        public void PrikazProfila ( string username)
-        {
-
-        }
-        public void Prijava (string username, string password)
-        {
-
-        }
-        public void Registracija (string ime, string prezime, string username, string password)
-        {
-
-        }
-        public void ValidirajPodatke (string username, string password)
-        {
-
-        }
         public List<Dojava> UcitavanjeDojava(Korisnik k)
         {
             DBDojava DB = new DBDojava();
@@ -40,6 +24,23 @@ namespace eRouting2
                 }
             }
             return dk;
+        }
+        public void UredjivanjeKorisnika(Korisnik k)
+        {
+            DBKorisnik DB = new DBKorisnik();
+            DB.UrediKorisnika(k);
+
+
+        }
+        public bool DaLiJeDostupanUsername (string username)
+        {
+            DBKorisnik DB = new DBKorisnik();
+            List<Korisnik> korisnici = UčitavanjeKorisnika();
+            if(korisnici.FirstOrDefault(x => x.Username == username) != null)
+            {
+                return false;
+            }
+            return true;
         }
         public List<Korisnik> UčitavanjeKorisnika()
         {

@@ -8,31 +8,32 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="47*"/>
+        </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Left" Margin="28,38,0,0" Text="Prijava" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
         <TextBlock HorizontalAlignment="Left" Margin="36,100,0,0" Text="Username:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="37,153,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
-        <TextBlock HorizontalAlignment="Left" Margin="583,33,0,0" Text="Registracija" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="34" Width="270" Height="48"/>
-        <TextBlock HorizontalAlignment="Left" Margin="582,143,0,0" Text="Prezime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="130" Height="34"/>
-        <TextBlock HorizontalAlignment="Left" Margin="581,190,0,0" Text="E-mail:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="104" Height="34"/>
-        <TextBlock HorizontalAlignment="Left" Margin="583,99,0,0" Text="Ime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="67" Height="34"/>
-        <TextBlock HorizontalAlignment="Left" Margin="577,243,0,0" Text="Kreiraj username:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="264" Height="35"/>
-        <TextBlock HorizontalAlignment="Left" Margin="577,297,0,0" Text="Kreiraj password:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="263" Height="33"/>
-        <TextBox x:Name="textIme" HorizontalAlignment="Left" Margin="851,103,0,0" Text="" VerticalAlignment="Top" Width="307" Height="34"/>
-        <TextBox x:Name="textUser" HorizontalAlignment="Left" Margin="856,249,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.234" Width="307" Height="34"/>
-        <TextBox x:Name="textEmail" HorizontalAlignment="Left" Margin="853,197,0,0" Text="" VerticalAlignment="Top" Width="309" Height="34"/>
-        <TextBox x:Name="textPrezime" HorizontalAlignment="Left" Margin="853,148,0,0" Text="" VerticalAlignment="Top" Width="305" Height="34"/>
-        <PasswordBox x:Name="textPass1" HorizontalAlignment="Left" Margin="854,303,0,0" VerticalAlignment="Top" Width="308" Height="34"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23.191,33,0,0" Text="Registracija" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="34" Width="270" Height="48" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.191,143,0,0" Text="Prezime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="130" Height="34" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21.191,190,0,0" Text="E-mail:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="104" Height="34" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23.191,99,0,0" Text="Ime:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="67" Height="34" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17.191,243,0,0" Text="Kreiraj username:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="264" Height="35" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17.191,297,0,0" Text="Kreiraj password:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Width="263" Height="33" Grid.Column="1"/>
+        <TextBox x:Name="textIme" HorizontalAlignment="Left" Margin="291.191,103,0,0" Text="" VerticalAlignment="Top" Width="307" Height="34" Grid.Column="1"/>
+        <TextBox x:Name="textUser" HorizontalAlignment="Left" Margin="296.191,249,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.234" Width="307" Height="34" Grid.Column="1"/>
+        <TextBox x:Name="textEmail" HorizontalAlignment="Left" Margin="293.191,197,0,0" Text="" VerticalAlignment="Top" Width="309" Height="34" Grid.Column="1"/>
+        <TextBox x:Name="textPrezime" HorizontalAlignment="Left" Margin="293.191,148,0,0" Text="" VerticalAlignment="Top" Width="305" Height="34" Grid.Column="1"/>
+        <PasswordBox x:Name="textPass1" HorizontalAlignment="Left" Margin="294.191,303,0,0" VerticalAlignment="Top" Width="308" Height="34" Grid.Column="1"/>
         <TextBox x:Name="textUsername" HorizontalAlignment="Left" Margin="175,102,0,0" Text="" VerticalAlignment="Top" Width="277"/>
         <PasswordBox x:Name="textPass" HorizontalAlignment="Left" Margin="173,159,0,0" VerticalAlignment="Top" Width="281"/>
         <Button x:Name="ButtonPrijaviSe" Content="Prijavi se " HorizontalAlignment="Left" Margin="173,230,0,0" VerticalAlignment="Top" Width="124" Background="#FF295ED9" Foreground="#FFFFFEFD" Click="ButtonPrijaviSe_Click"/>
-        <Button x:Name="buttonRegistrujSe" Content="RegistrujSe " HorizontalAlignment="Left" Margin="917,623,0,0" VerticalAlignment="Top" Width="217" Background="#FF295ED9" Foreground="#FFFFFEFD" Click="buttonRegistrujSe_Click"/>
         <CheckBox Content="Ostani prijavljen" HorizontalAlignment="Left" Margin="316,230,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonDodajFotografiju" Content="Dodaj fotografiju" HorizontalAlignment="Left" Margin="940,556,0,0" VerticalAlignment="Top" Width="169" Height="50"/>
-        <Image Source="/assets/ikona.png" HorizontalAlignment="Left" Height="138" Margin="958,400,0,0" VerticalAlignment="Top" Width="126"/>
-        <Image Source="/assets/pozadina.png" HorizontalAlignment="Left" Height="437" Margin="21,357,0,0" VerticalAlignment="Top" Width="660"/>
-        <FlipView HorizontalAlignment="Left" Margin="626,114,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image Source="/assets/pozadina.png" HorizontalAlignment="Left" Height="635" Margin="21,349,0,0" VerticalAlignment="Top" Width="1470" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textGreska" HorizontalAlignment="Left" Margin="44,204,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.226,-0.4" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="textPostoji" HorizontalAlignment="Left" Margin="588,352,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.065,-0.5" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="textPostoji" HorizontalAlignment="Left" Margin="28.191,352,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.065,-0.5" FontWeight="Bold" FontSize="18" Grid.Column="1"/>
+        <Button x:Name="buttonRegistrujSe" Content="RegistrujSe " HorizontalAlignment="Left" Margin="383.191,365,0,0" VerticalAlignment="Top" Width="217" Background="#FF295ED9" Foreground="#FFFFFEFD" Click="buttonRegistrujSe_Click" Grid.Column="1"/>
 
     </Grid>
 </Page>

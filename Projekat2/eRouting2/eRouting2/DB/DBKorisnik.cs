@@ -138,5 +138,62 @@ namespace eRouting2
             }
         }
 
+        public int UrediKorisnika(Korisnik k)
+        {
+            try
+            {
+                String query = "UPDATE Korisnik " +
+                "SET Ime = @Ime, Prezime= @Prezime, Username= @Username, Email=@Email "+
+                "Where ID=@ID;";
+                DBConnectionString s = new DBConnectionString();
+                using (SqlConnection con = new SqlConnection(s.GetString()))
+                {
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = query;
+
+                    SqlParameter ID = new SqlParameter();
+                    ID.Value = k.ID;
+                    ID.ParameterName = "ID";
+                    cmd.Parameters.Add(ID);
+
+                    SqlParameter Ime = new SqlParameter();
+                    Ime.Value = k.Ime;
+                    Ime.ParameterName = "Ime";
+                    cmd.Parameters.Add(Ime);
+
+                    SqlParameter Prezime = new SqlParameter();
+                    Prezime.Value = k.Prezime;
+                    Prezime.ParameterName = "Prezime";
+                    cmd.Parameters.Add(Prezime);
+
+                    SqlParameter Username = new SqlParameter();
+                    Username.Value = k.Username;
+                    Username.ParameterName = "Username";
+                    cmd.Parameters.Add(Username);
+
+      
+                    SqlParameter Email = new SqlParameter();
+                    Email.Value = k.Email;
+                    Email.ParameterName = "Email";
+                    cmd.Parameters.Add(Email);
+
+                   
+
+
+                    con.Open();
+                    int r = cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+                    con.Close();
+                    return r;
+
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("Exception: " + e.Message);
+                return 0;
+            }
+        }
+
     }
 }
