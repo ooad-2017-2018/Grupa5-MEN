@@ -38,11 +38,14 @@ namespace eRouting2
             ViewModel2 = new VMKorisnik();
             Korisnici = ViewModel2.UčitavanjeKorisnika();
             Administratori = ViewModel.UcitavanjeAdministratora();
-            Administratori.Add(new Administrator(1, "bla", "ha", "envera", "envera"));
+            Administratori.Add(new Administrator(1, "bla", "bla", "envera", "envera"));
         }
 
         private void ButtonPrijaviSe_Click(object sender, RoutedEventArgs e)
         {
+            textGreska.Text = String.Empty;
+            textPostoji.Text = String.Empty;
+
             Administrator traziA= Administratori.FirstOrDefault(x => x.Username == textUsername.Text && x.Password==textPass.Password);
             Korisnik traziK = Korisnici.FirstOrDefault(x => x.Username == textUsername.Text && x.Password == textPass.Password);
             if (!(traziA is null))
@@ -65,6 +68,8 @@ namespace eRouting2
 
         private void buttonRegistrujSe_Click(object sender, RoutedEventArgs e)
         {
+            textGreska.Text = String.Empty;
+            textPostoji.Text = String.Empty;
             string ime;
             string prezime;
             string email;
@@ -75,12 +80,34 @@ namespace eRouting2
             email=textEmail.Text;
             username = textUser.Text;
             pass = textPass1.Password;
-            Korisnik k = new Korisnik(0, ime, prezime, username, pass, email, 0, 0);
-            ViewModel2.DodajKorisnika(k);
-            Korisnici.Add(k);
-            MessageDialog msgbox = new MessageDialog("Uspješno ste se registrovali. Prijavite se ako želite nastaviti.");
-            msgbox.ShowAsync();
-
+            Korisnik postoji = Korisnici.FirstOrDefault(x => x.Username == username);
+            if (textIme.Text == string.Empty || textPrezime.Text == string.Empty || textEmail.Text == string.Empty || textUser.Text == string.Empty || textPass1.Password == string.Empty)
+            {
+                textPostoji.Text = "Molimo unesite sve tražene podatke.";
+                return;
+            }
+            else if (postoji != null)
+            {
+                textPostoji.Text = "Username već postoji. Pokušajte ponovo";
+                textUser.Text = String.Empty;
+                return;
+            }
+            else
+            {
+                Korisnik zadnji = Korisnici.Last();
+                int zadnjiId = zadnji.ID;
+                zadnjiId++;
+                Korisnik k = new Korisnik(zadnjiId, ime, prezime, username, pass, email, 0, 0);
+                ViewModel2.DodajKorisnika(k);
+                Korisnici.Add(k);
+                textIme.Text = String.Empty;
+                textPrezime.Text = String.Empty;
+                textEmail.Text = String.Empty;
+                textUser.Text = String.Empty;
+                textPass1.Password = String.Empty;
+                MessageDialog msgbox = new MessageDialog("Uspješno ste se registrovali. Prijavite se ako želite nastaviti.");
+                msgbox.ShowAsync();
+            }
 
 
         }

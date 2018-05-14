@@ -34,6 +34,7 @@ namespace eRouting2
 
         public Korisnik(int id, string ime, string prezime, string username, string password, string email, int brojDojava, int brojAktivnihDojava)
         {
+            ID = id;
             Ime = ime;
             Prezime = prezime;
             Email = email;
