@@ -94,9 +94,13 @@ namespace eRouting2
             }
             else
             {
-                Korisnik zadnji = Korisnici.Last();
-                int zadnjiId = zadnji.ID;
-                zadnjiId++;
+                int zadnjiId = 0;
+                if (Korisnici.Count > 0)
+                {
+                    Korisnik zadnji = Korisnici.Last();
+                    zadnjiId = zadnji.ID;
+                    zadnjiId++;
+                }
                 Korisnik k = new Korisnik(zadnjiId, ime, prezime, username, pass, email, 0, 0);
                 ViewModel2.DodajKorisnika(k);
                 Korisnici.Add(k);

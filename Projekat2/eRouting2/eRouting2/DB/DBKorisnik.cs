@@ -76,7 +76,7 @@ namespace eRouting2
             try
             {
                 String query = "insert into Korisnik " +
-                "values (@ID,@Ime,@Prezime,@Username,@Password,@Email, @BrojDojava, @BrojAktivnihDojava)";
+                "values (@ID,@Ime,@Prezime,@Username,@Password,@Email, @BrojDojava, @BrojAktivnihDojava, NULL)";
                 DBConnectionString s = new DBConnectionString();
                 using (SqlConnection con = new SqlConnection(s.GetString()))
                 {
