@@ -39,6 +39,7 @@ namespace eRouting2
             Korisnici = ViewModel2.UčitavanjeKorisnika();
             Administratori = ViewModel.UcitavanjeAdministratora();
             Administratori.Add(new Administrator(1, "bla", "bla", "envera", "envera"));
+            Korisnici.Add(new Korisnik(2, "ime", "prezime", "mirza", "mirza", "mail", 0, 0));
         }
 
         private void ButtonPrijaviSe_Click(object sender, RoutedEventArgs e)

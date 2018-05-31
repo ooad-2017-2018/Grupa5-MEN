@@ -33,6 +33,7 @@ namespace eRouting2
                         while (reader.Read())
                         {
                             Korisnik k = new Korisnik(reader.GetInt32(0) ,reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7));
+                            //k.DodajSliku(reader.Get)
                             Korisnici.Add(k);
                         }
                     }
@@ -122,6 +123,11 @@ namespace eRouting2
                     BrojAktivnihDojava.Value = k.BrojAktivnihDojava;
                     BrojAktivnihDojava.ParameterName = "BrojAktivnihDojava";
                     cmd.Parameters.Add(BrojAktivnihDojava);
+
+                    /*SqlParameter k_Slika = new SqlParameter();
+                    k_Slika.SqlDbType = System.Data.SqlDbType.Image;
+                    k_Slika.Value = k.Slika;
+                    k_Slika.ParameterName = "Slika";*/
 
                     con.Open();
                     int r = cmd.ExecuteNonQuery();
