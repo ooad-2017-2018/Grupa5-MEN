@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace AspNet.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -15,7 +16,7 @@ namespace AspNet.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "E-routing.";
 
             return View();
         }

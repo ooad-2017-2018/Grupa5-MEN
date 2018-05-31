@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AspNet.Models.Dojava>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Korisnik.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Korisnik1.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mjesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VrijemeDojave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrajanjeDojave)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Korisnik.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Korisnik1.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mjesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VrijemeDojave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrajanjeDojave)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

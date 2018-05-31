@@ -30,7 +30,9 @@ namespace AspNet.Models
 
         [StringLength(30)]
         public string Pass { get; set; }
-
+        [MinLength(3,
+            ErrorMessage="Password mora sadržavati najmanje 3 znaka.")]
+ 
         [StringLength(30)]
         public string Email { get; set; }
 

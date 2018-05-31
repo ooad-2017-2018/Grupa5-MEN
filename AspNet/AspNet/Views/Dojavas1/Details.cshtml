@@ -1,0 +1,58 @@
+﻿@model AspNet.Models.Dojava
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dojava</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Korisnik.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Korisnik.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Korisnik1.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Korisnik1.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mjesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mjesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VrijemeDojave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VrijemeDojave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrajanjeDojave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrajanjeDojave)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
