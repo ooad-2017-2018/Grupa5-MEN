@@ -1,0 +1,42 @@
+﻿@model AspNet.Models.Ruta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ruta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Start)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kraj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kraj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VrijemePutovanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VrijemePutovanja)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

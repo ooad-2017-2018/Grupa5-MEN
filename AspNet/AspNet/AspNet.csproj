@@ -203,18 +203,33 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\AdministratorsController.cs" />
+    <Compile Include="Controllers\Dojavas1Controller.cs" />
+    <Compile Include="Controllers\DojavasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Korisniks1Controller.cs" />
+    <Compile Include="Controllers\KorisniksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Rutas1Controller.cs" />
+    <Compile Include="Controllers\RutasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805311413115_ruta.cs" />
+    <Compile Include="Migrations\201805311413115_ruta.Designer.cs">
+      <DependentUpon>201805311413115_ruta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Dojava.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\NavigacijskiSistem.cs" />
+    <Compile Include="Models\Ruta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -277,6 +292,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Administrators\Create.cshtml" />
+    <Content Include="Views\Administrators\Delete.cshtml" />
+    <Content Include="Views\Administrators\Details.cshtml" />
+    <Content Include="Views\Administrators\Edit.cshtml" />
+    <Content Include="Views\Administrators\Index.cshtml" />
+    <Content Include="Views\Korisniks1\Create.cshtml" />
+    <Content Include="Views\Korisniks1\Delete.cshtml" />
+    <Content Include="Views\Korisniks1\Details.cshtml" />
+    <Content Include="Views\Korisniks1\Edit.cshtml" />
+    <Content Include="Views\Korisniks1\Index.cshtml" />
+    <Content Include="Views\Dojavas1\Create.cshtml" />
+    <Content Include="Views\Dojavas1\Delete.cshtml" />
+    <Content Include="Views\Dojavas1\Details.cshtml" />
+    <Content Include="Views\Dojavas1\Edit.cshtml" />
+    <Content Include="Views\Dojavas1\Index.cshtml" />
+    <Content Include="Views\Rutas1\Create.cshtml" />
+    <Content Include="Views\Rutas1\Delete.cshtml" />
+    <Content Include="Views\Rutas1\Details.cshtml" />
+    <Content Include="Views\Rutas1\Edit.cshtml" />
+    <Content Include="Views\Rutas1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +328,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805311413115_ruta.resx">
+      <DependentUpon>201805311413115_ruta.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

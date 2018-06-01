@@ -7,6 +7,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private Model1 db = new Model1();
@@ -17,7 +18,7 @@ namespace AspNet.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "E-routing.";
 
             return View();
         }

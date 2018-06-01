@@ -68,5 +68,7 @@ namespace AspNet.Models
                 .WithOptional(e => e.Korisnik1)
                 .HasForeignKey(e => e.ZadnjiIzmjenio);
         }
+
+        public System.Data.Entity.DbSet<AspNet.Models.Ruta> Rutas { get; set; }
     }
 }
