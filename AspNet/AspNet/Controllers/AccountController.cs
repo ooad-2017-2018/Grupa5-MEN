@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -12,7 +13,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -66,7 +67,7 @@ namespace AspNet.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(Korisnik model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -75,7 +76,7 @@ namespace AspNet.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            /*var result = await SignInManager.PasswordSignInAsync(model.Username, model.Pass, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -88,6 +89,14 @@ namespace AspNet.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
+            }*/
+            Model1 m = new Model1();
+            var user = m.Korisniks.FirstOrDefault(k => k.Username == model.Username && k.Pass == model.Pass);
+            if (user == null) { ModelState.AddModelError("", "Invalid login attempt."); return View(model); }
+            else
+            {
+                FormsAuthentication.SetAuthCookie(user.Username, false);
+                return RedirectToAction("Index", "Home");
             }
         }
 

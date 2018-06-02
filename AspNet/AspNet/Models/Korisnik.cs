@@ -43,6 +43,10 @@ namespace AspNet.Models
         [Column(TypeName = "image")]
         public byte[] SlikaProfila { get; set; }
 
+        //bul da li se pamti login korisnika, mozemo to i izostaviti kasnije
+        [Display(Name = "Remember me?")]
+        public int RememberMe { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dojava> Dojavas { get; set; }
 

@@ -98,8 +98,10 @@ namespace eRouting2
                 int zadnjiId = 0;
                 if (Korisnici.Count > 0)
                 {
-                    Korisnik zadnji = Korisnici.Last();
-                    zadnjiId = zadnji.ID;
+                    foreach(Korisnik kor in Korisnici)
+                    {
+                        if (kor.ID > zadnjiId) zadnjiId = kor.ID;
+                    }
                     zadnjiId++;
                 }
                 Korisnik k = new Korisnik(zadnjiId, ime, prezime, username, pass, email, 0, 0);

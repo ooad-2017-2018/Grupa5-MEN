@@ -43,7 +43,7 @@ namespace eRouting2
             dojave = ViewModel.UcitavanjeDojava(korisnik);
             for( int i=0; i<dojave.Count; i++)
             {
-                ListBoxDojave.Items.Add(dojave[i].Vrsta + " " + dojave[i].Lokacija);
+                ListBoxDojave.Items.Add(dojave[i].Vrsta + " - " + dojave[i].Lokacija);
             }
 
 
