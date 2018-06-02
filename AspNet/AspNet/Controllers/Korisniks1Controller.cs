@@ -46,10 +46,13 @@ namespace AspNet.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Ime,Prezime,Username,Pass,Email,BrojDojava,BrojAktivnihDojava,SlikaProfila")] Korisnik korisnik)
+        public ActionResult Create([Bind(Include = "ID,Ime,Prezime,Username,Pass,Email")] Korisnik korisnik)
         {
             if (ModelState.IsValid)
             {
+                korisnik.BrojDojava = 0;
+                korisnik.BrojAktivnihDojava = 0;
+                
                 db.Korisniks.Add(korisnik);
                 db.SaveChanges();
                 return RedirectToAction("Index");
