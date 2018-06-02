@@ -312,6 +312,7 @@
     <Content Include="Views\Rutas1\Details.cshtml" />
     <Content Include="Views\Rutas1\Edit.cshtml" />
     <Content Include="Views\Rutas1\Index.cshtml" />
+    <Content Include="Views\Korisniks1\mojProfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
