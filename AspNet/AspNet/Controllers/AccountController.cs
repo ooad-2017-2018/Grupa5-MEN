@@ -13,7 +13,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
-    //[Authorize]
+ //   [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -92,12 +92,15 @@ namespace AspNet.Controllers
             }*/
             Model1 m = new Model1();
             var user = m.Korisniks.FirstOrDefault(k => k.Username == model.Username && k.Pass == model.Pass);
+            Session["ID"] = user.ID;
+
             if (user == null) { ModelState.AddModelError("", "Invalid login attempt."); return View(model); }
             else
             {
                 FormsAuthentication.SetAuthCookie(user.Username, false);
                 return RedirectToAction("Index", "Home");
             }
+            return RedirectToAction("Index", "Home");
         }
 
         //

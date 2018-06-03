@@ -10,6 +10,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
+    //[Authorize]
     public class Rutas1Controller : Controller
     {
         private Model1 db = new Model1();

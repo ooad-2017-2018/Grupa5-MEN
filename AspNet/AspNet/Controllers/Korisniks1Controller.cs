@@ -10,9 +10,11 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
+    //[Authorize]
     public class Korisniks1Controller : Controller
     {
         private Model1 db = new Model1();
+
 
         // GET: Korisniks1
         public ActionResult Index()
@@ -126,5 +128,18 @@ namespace AspNet.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult mojProfil (int id)
+        {
+            string username = (string)Session["username"];
+            Model1 m = new Model1();
+            Korisnik k = m.Korisniks.FirstOrDefault(x => x.Username == username);
+            ViewData["Ime"] = k.Ime;
+            ViewData["Prezime"] = k.Prezime;
+            ViewData["Username"] = k.Username;
+            ViewData["Email"] = k.Email;
+            ViewData["Broj dojava"] = k.BrojDojava;
+            ViewData["Broj aktivnih dojava"] = k.BrojAktivnihDojava;
+            return View(k);        }
+
     }
 }

@@ -13,7 +13,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class AdministratorController : ApiController
     {
         private Model1 db = new Model1();

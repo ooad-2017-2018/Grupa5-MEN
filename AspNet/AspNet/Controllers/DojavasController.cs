@@ -12,7 +12,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class DojavasController : ApiController
     {
         private Model1 db = new Model1();

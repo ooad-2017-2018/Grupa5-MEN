@@ -10,7 +10,7 @@ using AspNet.Models;
 
 namespace AspNet.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
