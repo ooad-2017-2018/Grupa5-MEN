@@ -1,4 +1,4 @@
-namespace AspNet.Models
+namespace ERoutingAPI.Models
 {
     using System;
     using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace AspNet.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        [StringLength(60)]
+        [StringLength(200)]
         public string Mjesto { get; set; }
 
         public DateTime? VrijemeDojave { get; set; }
@@ -23,10 +23,23 @@ namespace AspNet.Models
 
         public int? ZadnjiIzmjenio { get; set; }
 
+        public int? Korisnik_ID { get; set; }
+
+        public int? Korisnik_ID1 { get; set; }
+
+        public int? Korisnik_ID2 { get; set; }
+
+        public int? Korisnik1_ID { get; set; }
+
+        [StringLength(60)]
+        public string VrstaDojave { get; set; }
+
         public virtual Korisnik Korisnik { get; set; }
 
         public virtual Korisnik Korisnik1 { get; set; }
 
-        public string VrstaDojave { get; set; }
+        public virtual Korisnik Korisnik2 { get; set; }
+
+        public virtual Korisnik Korisnik3 { get; set; }
     }
 }

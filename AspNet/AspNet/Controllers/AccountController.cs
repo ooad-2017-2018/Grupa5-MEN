@@ -90,15 +90,26 @@ namespace AspNet.Controllers
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }*/
+            
             Model1 m = new Model1();
-            var user = m.Korisniks.FirstOrDefault(k => k.Username == model.Username && k.Pass == model.Pass);
-            Session["ID"] = user.ID;
-
-            if (user == null) { ModelState.AddModelError("", "Invalid login attempt."); return View(model); }
+            var korisnik = m.Korisniks.FirstOrDefault(k => k.Username == model.Username && k.Pass == model.Pass);
+            if (korisnik == null) {
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(model);
+            }
             else
             {
-                FormsAuthentication.SetAuthCookie(user.Username, false);
-                return RedirectToAction("Index", "Home");
+                //var result = await SignInManager.PasswordSignInAsync(model.Username, model.Pass, Convert.ToBoolean(model.RememberMe), shouldLockout: false);
+                //var user = new ApplicationUser { UserName = model.Username, Email = "mdelibasic1@etf.unsa.ba" };
+                //user.Roles.Add("Administrator");
+                //user.Claims.
+                //var result = await UserManager.CreateAsync(user, model.Pass+"-");
+                //if (result.Succeeded)
+                //{
+                //    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                //}
+                Session["ID"] = korisnik.ID;
+                FormsAuthentication.SetAuthCookie(korisnik.Username, false);
             }
             return RedirectToAction("Index", "Home");
         }
@@ -180,11 +191,14 @@ namespace AspNet.Controllers
                  }
                  AddErrors(result);*/
                
-                    Model1 m = new Model1();
-                  int nID= m.Korisniks.Max(k => k.ID);
+                Model1 m = new Model1();
+                int nID= m.Korisniks.Max(k => k.ID);
                 korisnik.ID = nID + 1;
-                   
-                 m.Korisniks.Add(korisnik);
+                //var user = new ApplicationUser { UserName = model.Username/*, Email = model.Email*/ };
+                //user.Claims.
+                //var result = await UserManager.CreateAsync(user, model.Pass);
+                //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                m.Korisniks.Add(korisnik);
                 m.SaveChanges();
             }
 

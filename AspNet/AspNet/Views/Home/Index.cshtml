@@ -93,20 +93,23 @@
             });
             var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
             var icon = {
-                url: "/Content/Logo-crash.jpg", 
+                url: "/Content/Logo-crash.jpg",
                 scaledSize: new google.maps.Size(25, 25),
-                origin: new google.maps.Point(0, 0), 
-                anchor: new google.maps.Point(0, 0) 
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0)
             };
-            var marker = new google.maps.Marker({
-                map: map,
-                position: new google.maps.LatLng(43.855067, 18.404656),
-                icon:icon,
-                //icon: "/Content/Logo-crash.jpg",
-                title: "Sudar",
-                /*icon: 'https://cdn1.iconfinder.com/data/icons/Webtoys/64/Pin.png', */
-                //Text:"Marker"
-            });
+            var ime = "Title";
+            //var markeri = ViewData["Dojave"];
+            //markeri.forEach(function (ime) {
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: new google.maps.LatLng(43.855067, 18.404656),
+                    icon: icon,
+                    title: ime,
+                    /*icon: 'https://cdn1.iconfinder.com/data/icons/Webtoys/64/Pin.png', */
+                    //Text:"Marker"
+                });
+            //});
             new AutocompleteDirectionsHandler(map);
 
         }

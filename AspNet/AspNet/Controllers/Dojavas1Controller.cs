@@ -40,8 +40,18 @@ namespace AspNet.Controllers
         // GET: Dojavas1/Create
         public ActionResult Create()
         {
-            ViewBag.Posiljalac = new SelectList(db.Korisniks, "ID", "Ime");
-            ViewBag.ZadnjiIzmjenio = new SelectList(db.Korisniks, "ID", "Ime");
+            int x;
+            if (Session["ID"] != null)
+                x = Convert.ToInt32(Session["ID"]);
+            else x = 0;
+            List<String> vrste = new List<String>();
+            vrste.Add("Saobracajna nesreca");
+            vrste.Add("Zastoj");
+            vrste.Add("Radovi na putu");
+            ViewBag.Posiljalac = new SelectList(db.Korisniks.Where(k => k.ID == x).ToList(),"ID","Ime" );
+            //ViewBag.Posiljalac = new SelectList(db.Korisniks, "ID", "Ime");
+            ViewBag.ZadnjiIzmjenio = new SelectList(db.Korisniks.Where(k => k.ID == x).ToList(), "ID", "Ime");
+            ViewBag.VrstaDojave = new SelectList(vrste);
             return View();
         }
 
@@ -50,10 +60,11 @@ namespace AspNet.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Mjesto,VrijemeDojave,TrajanjeDojave,Posiljalac,ZadnjiIzmjenio")] Dojava dojava)
+        public ActionResult Create([Bind(Include = "ID,Mjesto,VrijemeDojave,TrajanjeDojave,Posiljalac,ZadnjiIzmjenio,VrstaDojave")] Dojava dojava)
         {
             if (ModelState.IsValid)
             {
+                dojava.VrijemeDojave = DateTime.Now;
                 db.Dojavas.Add(dojava);
                 db.SaveChanges();
                 return RedirectToAction("Index");

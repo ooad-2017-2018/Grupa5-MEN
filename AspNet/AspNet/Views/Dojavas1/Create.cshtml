@@ -1,74 +1,81 @@
 ﻿@model AspNet.Models.Dojava
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Kreiranje dojave";
 }
 
-<h2>Create</h2>
+<h2>Kreiranje dojave</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Dojava</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <!--<div class="form-group">
-            //Html.LabelFor(model => model.Mjesto, htmlAttributes: new { //class = "control-label col-md-2" })
-            <div class="col-md-10">
-                //Html.EditorFor(model => model.Mjesto, new { htmlAttributes = new { //class = "form-control" } })
-                //Html.ValidationMessageFor(model => model.Mjesto, "", new { //class = "text-danger" })
-            </div>
-        </div>-->
-        <input type="text" id="txtMjesto" style="width: 250px" />
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.VrijemeDojave, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.VrijemeDojave, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.VrijemeDojave, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TrajanjeDojave, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TrajanjeDojave, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TrajanjeDojave, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Posiljalac, "Posiljalac", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Posiljalac", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Posiljalac, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ZadnjiIzmjenio, "ZadnjiIzmjenio", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ZadnjiIzmjenio", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ZadnjiIzmjenio, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <h4>Dojava</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.ID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Mjesto, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Mjesto, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Mjesto, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VrijemeDojave, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VrijemeDojave, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VrijemeDojave, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TrajanjeDojave, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TrajanjeDojave, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TrajanjeDojave, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Posiljalac, "Posiljalac", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Posiljalac", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Posiljalac, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ZadnjiIzmjenio, "ZadnjiIzmjenio", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ZadnjiIzmjenio", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ZadnjiIzmjenio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VrstaDojave, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("VrstaDojave",null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.VrstaDojave, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
@@ -77,25 +84,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArwm7LrXuW2CnouB8atXKyXdnPevofGrk&libraries=places&sensor=false"
-        async defer></script>
-<script type="text/javascript">
-    function Kreiranje() {
-        var mesg = "test";
-        alert(mesg);
-    }
-    google.maps.event.addDomListener(window, 'load', function () {
-        var places = new google.maps.places.Autocomplete(document.getElementById('txtMjesto'));
-        google.maps.event.addListener(places, 'place_changed', function () {
-            var place = places.getPlace();
-            var address = place.formatted_address;
-            var latitude = place.geometry.location.A;
-            var longitude = place.geometry.location.F;
-            var mesg = "Address: " + address;
-            mesg += "\nLatitude: " + latitude;
-            mesg += "\nLongitude: " + longitude;
-            alert(mesg);
-        });
-    });
-</script>
     }
