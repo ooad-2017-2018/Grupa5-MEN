@@ -19,17 +19,19 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
                 @Html.ActionLink("e-Routing", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Pronađi rutu", "Index", "Home")</li>
-                    <li>@Html.ActionLink("O nama", "About", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt informacije", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Moj profil", "Details/" + Convert.ToString(Session["ID"]), "Korisniks1")</li>
-                    <li>@Html.ActionLink("Dodaj dojavu", "Create", "Dojavas1")</li>
-                </ul>
+				<ul class="nav navbar-nav">
+					<li>@Html.ActionLink("Pronađi rutu", "Index", "Home")</li>
+					<li>@Html.ActionLink("O nama", "About", "Home")</li>
+					<li>@Html.ActionLink("Kontakt informacije", "Contact", "Home")</li>
+					<li>@Html.ActionLink("Moj profil", "Details/" + Convert.ToString(Session["ID"]), "Korisniks1")</li>
+					<li>@Html.ActionLink("Dodaj dojavu", "Create", "Dojavas1")</li>
+					<li>@Html.ActionLink("Web Api", "Index", "Korisniks1")</li>
+				</ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

@@ -4,9 +4,13 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using AspNet.Models;
+using Newtonsoft.Json;
 
 namespace AspNet.Controllers
 {
@@ -15,13 +19,45 @@ namespace AspNet.Controllers
     {
         private Model1 db = new Model1();
 
+        string apiUrl = "http://eroutingapi2018.azurewebsites.net";
 
-        // GET: Korisniks1
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.Korisniks.ToList());
-        }
+            List<Korisnik> korisnici = new List<Korisnik>();
+            using (var client = new HttpClient())
+            {
 
+                //Postavljanje adrese URL od web api servisa 
+                client.BaseAddress = new Uri(apiUrl);
+
+                client.DefaultRequestHeaders.Clear();
+
+                //definisanje formata koji želimo prihvatiti 
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Asinhrono slanje zahtjeva za podacima o studentima 
+
+                HttpResponseMessage Res = await client.GetAsync("api/korisnik/");
+
+                //Provjera da li je rezultat uspješan  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //spremanje podataka dobijenih iz responsa 
+                    var response = Res.Content.ReadAsStringAsync().Result;
+                    korisnici = JsonConvert.DeserializeObject<List<Korisnik>>(response);
+
+                }
+
+                return View(korisnici);
+            }
+        }
+        // GET: Korisniks1
+
+        /* public ActionResult Index()
+         {
+             return View(db.Korisniks.ToList());
+         }
+         */
         // GET: Korisniks1/Details/5
         public ActionResult Details(int? id)
         {
