@@ -33,9 +33,6 @@
         <th>
             @Html.DisplayNameFor(model => model.BrojAktivnihDojava)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SlikaProfila)
-        </th>
         <th></th>
     </tr>
 
@@ -62,14 +59,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.BrojAktivnihDojava)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SlikaProfila)
-        </td>
-        <td>
+       @*@ <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
+		   *@
     </tr>
 }
 
