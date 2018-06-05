@@ -98,18 +98,40 @@
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 0)
             };
-            var ime = "Title";
             //var markeri = ViewData["Dojave"];
             //markeri.forEach(function (ime) {
                 var marker = new google.maps.Marker({
                     map: map,
-                    position: new google.maps.LatLng(43.855067, 18.404656),
+                    position: new google.maps.LatLng(43.854470, 18.406370),
                     icon: icon,
-                    title: ime,
-                    /*icon: 'https://cdn1.iconfinder.com/data/icons/Webtoys/64/Pin.png', */
-                    //Text:"Marker"
+                    title: "Saobracajna nesreca"
                 });
             //});
+            var icon2 = {
+                url: "/Content/Logo-Guzva.png",
+                scaledSize: new google.maps.Size(25, 25),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0)
+            };
+            var marker2 = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(43.858899, 18.411918),
+                icon: icon2,
+                title: "Zastoj"
+            });
+            var icon3 = {
+                url: "/Content/Logo-radovi.png",
+                scaledSize: new google.maps.Size(25, 25),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0)
+            };
+            var marker3 = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(43.858923, 18.402682),
+                icon: icon3,
+                title: "Radovi na putu"
+            });
+
             new AutocompleteDirectionsHandler(map);
 
         }
