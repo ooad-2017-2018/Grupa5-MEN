@@ -82,7 +82,13 @@ namespace eRouting2
             username = textUser.Text;
             pass = textPass1.Password;
             Korisnik postoji = Korisnici.FirstOrDefault(x => x.Username == username);
-            if (textIme.Text == string.Empty || textPrezime.Text == string.Empty || textEmail.Text == string.Empty || textUser.Text == string.Empty || textPass1.Password == string.Empty)
+            bool prazan ()
+            {
+                if (textIme.Text == string.Empty || textPrezime.Text == string.Empty || textEmail.Text == string.Empty || textUser.Text == string.Empty || textPass1.Password == string.Empty)
+                    return true;
+                return false;
+            }
+            if (prazan())
             {
                 textPostoji.Text = "Molimo unesite sve tražene podatke.";
                 return;
