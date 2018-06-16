@@ -35,10 +35,7 @@ namespace eRouting2
 
         private void ButtonObrisi_Click(object sender, RoutedEventArgs e)
         {
-            bool prazan2 {
-                if (ListBoxKorisnici.Items.Count == 0 || ListBoxKorisnici.SelectedItem == null)
-
-                    }
+           
             {
                 TextBlockGreska.Text = "Nije odabran korisnik!";
                 return;

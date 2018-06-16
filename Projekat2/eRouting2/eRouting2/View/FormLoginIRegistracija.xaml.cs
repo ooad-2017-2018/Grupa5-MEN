@@ -66,6 +66,12 @@ namespace eRouting2
                 textUsername.Text = String.Empty;
             }
         }
+        bool prazan()
+        {
+            if (textIme.Text == string.Empty || textPrezime.Text == string.Empty || textEmail.Text == string.Empty || textUser.Text == string.Empty || textPass1.Password == string.Empty)
+                return true;
+            return false;
+        }
 
         private void buttonRegistrujSe_Click(object sender, RoutedEventArgs e)
         {
@@ -82,12 +88,7 @@ namespace eRouting2
             username = textUser.Text;
             pass = textPass1.Password;
             Korisnik postoji = Korisnici.FirstOrDefault(x => x.Username == username);
-            bool prazan ()
-            {
-                if (textIme.Text == string.Empty || textPrezime.Text == string.Empty || textEmail.Text == string.Empty || textUser.Text == string.Empty || textPass1.Password == string.Empty)
-                    return true;
-                return false;
-            }
+            
             if (prazan())
             {
                 textPostoji.Text = "Molimo unesite sve tražene podatke.";

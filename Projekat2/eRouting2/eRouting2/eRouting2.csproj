@@ -95,8 +95,10 @@
     <Compile Include="DB\DBAdministrator.cs" />
     <Compile Include="DB\DBDojava.cs" />
     <Compile Include="DB\DBKorisnik.cs" />
+    <Compile Include="Model\IKorisnik.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Dojava.cs" />
+    <Compile Include="Model\PremiumKorisnik.cs" />
     <Compile Include="ViewModel\VMDojava.cs" />
     <Compile Include="ViewModel\VMKorisnik.cs" />
     <Compile Include="View\FormaMojProfil.xaml.cs">

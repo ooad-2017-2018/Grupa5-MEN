@@ -69,14 +69,17 @@ namespace eRouting2
                 }
             }
         }
+
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            bool dostupan = ViewModel.DaLiJeDostupanUsername(TextBoxUsername.Text);
+            bool isti = (korisnik.Username != TextBoxUsername.Text);
             if (TextBoxIme.Text == string.Empty || TextBoxPrezime.Text == string.Empty || TextBoxEmail.Text == string.Empty || TextBoxUsername.Text == string.Empty)
             {
                 TextError.Text = "Polja ne smiju biti prazna";
                 return;
             }
-            else if (ViewModel.DaLiJeDostupanUsername(TextBoxUsername.Text) == false && korisnik.Username!=TextBoxUsername.Text)
+            else if ( !dostupan && isti)
             {
                 TextError.Text = "Ovaj username vec postoji, izaberite neki drugi username";
                 return;

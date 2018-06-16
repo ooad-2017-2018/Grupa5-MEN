@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace eRouting2
 {
-    public class Korisnik
+    public class Korisnik : IKorisnik
     {
         int id;
         string ime;
