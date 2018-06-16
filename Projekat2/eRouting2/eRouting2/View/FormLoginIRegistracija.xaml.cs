@@ -86,9 +86,17 @@ namespace eRouting2
             prezime = textPrezime.Text;
             email=textEmail.Text;
             username = textUser.Text;
-            pass = textPass1.Password;
+
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(textPass1.Password));
+            byte[] result = md5.Hash;
+            StringBuilder str = new StringBuilder();
+            for (int i = 1; i < result.Length; i++)
+                str.Append(result[i].ToString("x2"));
+            pass = str.ToString();
+
             Korisnik postoji = Korisnici.FirstOrDefault(x => x.Username == username);
-            
+
             if (prazan())
             {
                 textPostoji.Text = "Molimo unesite sve tražene podatke.";

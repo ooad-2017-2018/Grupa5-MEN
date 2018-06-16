@@ -44,9 +44,8 @@ namespace eRouting2
         }
         public bool DaLiJeDostupanUsername (string username)
         {
-            DBKorisnik DB = new DBKorisnik();
-            List<Korisnik> korisnici = UčitavanjeKorisnika();
-            if(korisnici.FirstOrDefault(x => x.Username == username) != null)
+            //List<Korisnik> korisnici = UčitavanjeKorisnika();
+            if(UčitavanjeKorisnika().FirstOrDefault(x => x.Username == username) != null)
             {
                 return false;
             }
@@ -57,6 +56,8 @@ namespace eRouting2
             DBKorisnik DB = new DBKorisnik();
             DB.UcitajKorisnike();
             return DB.Korisnici;
+            //List<Korisnik> korisnici = DB.Korisnici;
+            //return korisnici;
         }
         public void DodajKorisnika(Korisnik k)
         {
